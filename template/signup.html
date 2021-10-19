@@ -1,0 +1,223 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Nkaizen Consulting Services</title>
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+<link href="{% static 'css/login.css' %}" rel="stylesheet" />
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'css/fonts.min.css' %}">
+<!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="{% static 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
+<script src="{% static 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js' %}"></script>
+
+<![endif]-->
+</head>
+
+
+<body>
+
+<div  class="signin-wrapper">
+  <div class="signin-box">
+    <div class="row no-gutters effect2"> <br>
+      <div class="col-lg-12">
+        <div class="pull-left"> <img src="{% static 'images/nk-logo.png' %}"  class="img-responsive"  alt=""/></div>
+        <div class="pull-right">
+          <h3>Signup account</h3>
+        </div>
+        <div class="clearfix"></div>
+        <div class="mb30"></div>
+        <h4 class="text-info">Below all fields are Mandatory</h4>
+        <div class="mb30"></div>
+
+      <form action="signup" method="post" novalidate id="indexForm" data-courses-url="{% url 'ajax_load_branches' %}">
+          {% csrf_token %}
+
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">First Name</label>
+            <input type="text" name="Cname" class="form-control2" id="" placeholder="Enter First Name">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Last Name</label>
+            <input  type="text" name="Cname2" class="form-control2" id="" placeholder="Enter Last Name">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Pan No.</label>
+            <input type="text" name="pan" class="form-control2" id="" placeholder="Enter Pan No.">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">GST No.</label>
+            <input type="text" name="gst" class="form-control2" id="" placeholder="Enter GST No.">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Registration No.</label>
+            <input type="text" name="register" class="form-control2" id="" placeholder="Enter Registration No.">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Licence Details</label>
+            <input type="text" name="licence" class="form-control2" id="" placeholder="Enter Licence Detail">
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">State </label>
+            <select class="form-control2" name="province" id="province">
+              <option value="" selected="">Select State</option>
+              {% for i in province %}
+              <option value="{{i.id}}">{{i.name}}</option>
+              {% endfor %}
+
+            </select>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Branch Name</label>
+            <select class="form-control2" name="branches" id="branches">
+              <option value="" selected="">Select Branch</option>
+
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Address Details</label>
+            <input type="text" name="address" class="form-control2" id="" placeholder="Enter Address Details">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Responsible Person</label>
+            <input type="text" name="person" class="form-control2" id="" placeholder="Enter Responsible Person">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Responsible Contact No.</label>
+            <input type="text" name="contact1" class="form-control2" id="" placeholder="Enter Responsible Contact No. ">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Responsible Email Id</label>
+            <input type="email" name="email1" class="form-control2" id="" placeholder="Enter Responsible Email Id">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Office Email Id</label>
+            <input type="email" name="email2" class="form-control2" id="" placeholder="Enter Office Email Id">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Office Contact No.</label>
+            <input type="text" name="contact2" class="form-control2" id="" placeholder="Enter Office Contact No.">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Office Location</label>
+            <input type="text" name="location" class="form-control2" id="" placeholder="Enter Office Location">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Postal Code</label>
+            <input type="text" name="postalcode" class="form-control2" id="" placeholder="Enter Postal Code">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">User Id</label>
+            <input type="text" name="userid" class="form-control2" id="" placeholder="NK4589DamodharReddy" disabled>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Password <span class="txt-red">*</span></label>
+            <input type="password" name="password1" class="form-control2" id="password" placeholder="Enter password">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group">
+            <label class="form-control-label">Confirm Password <span class="txt-red">*</span></label>
+            <input type="password" name="password2" class="form-control2" id="password" placeholder="Confirm password">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+          <div class="form-group mt30">
+            <label><input type="checkbox" checked="">Show Password </label>
+          </div>
+        </div>
+
+        <div>
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+          <div class="form-group">
+            <button type="submit" class="btn btn-block" onClick="window.location.href='index.html'">CREATE ACCOUNT</button>
+          </div>
+        </div>
+
+      </form>
+
+
+      </div>
+    </div>
+    <p class="mgt15">&copy; 2021  Nkaizen Consulting Services </p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#province").change(function () {
+      var url = $("#indexForm").attr("data-courses-url");
+      var provinceId = $(this).val();
+
+      $.ajax({
+        url: url,
+        data: {
+          'provinceing': provinceId
+        },
+        success: function (data) {
+          $("#branches").html(data);
+        }
+      });
+
+    });
+  </script>
+
+
+</body>
+</html>

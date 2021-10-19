@@ -1,0 +1,572 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Nkaizen Consulting Services</title>
+<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/layout.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/fonts.min.css' %}">
+</head> 
+<body>
+<div class="wrapper">
+<!-- Header -->
+<div class="main-header"> 
+  <div class="logo-header" data-background-color="white"> <a href="/" class="logo"> <img src="{% static 'images/nk-logo-sm.png' %}" alt="navbar brand" class="navbar-brand"> </a>
+    <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"> <i class="icon-menu"></i> </span> </button>
+    <button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+    <div class="nav-toggle">
+      <button class="btn btn-toggle toggle-sidebar"> <i class="icon-menu"></i> </button>
+    </div>
+  </div>  
+  <nav class="navbar navbar-header navbar-expand-lg" data-background-color="white">
+    <div class="container-fluid">
+      <div class="collapse" id="search-nav">
+        <form class="navbar-left navbar-form nav-search mr-md-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <button type="submit" class="btn btn-search pr-1"> <i class="fa fa-search search-icon"></i> </button>
+            </div>
+            <input type="text" placeholder="Search ..." class="form-control">
+          </div>
+        </form>
+      </div>
+      <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+        <li class="nav-item toggle-nav-search hidden-caret"> <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav"> <i class="fa fa-search"></i> </a> </li>
+        <li class="nav-item dropdown hidden-caret"> <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i> <span class="notification">4</span> </a>
+          <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+            <li>
+              <div class="dropdown-title">You have 4 new notification</div>
+            </li>
+            <li>
+              <div class="notif-scroll scrollbar-outer">
+                <div class="notif-center"> <a href="#">
+                  <div class="notif-icon notif-primary"> <i class="fa fa-user-plus"></i> </div>
+                  <div class="notif-content"> <span class="block"> New user registered </span> <span class="time">5 minutes ago</span> </div>
+                  </a> <a href="#">
+                  <div class="notif-icon notif-success"> <i class="fa fa-comment"></i> </div>
+                  <div class="notif-content"> <span class="block"> commented on Admin </span> <span class="time">12 minutes ago</span> </div>
+                  </a> <a href="#">
+                  <div class="notif-img"> <img src="{% static 'images/profile2.jpg' %}" alt="Img Profile"> </div>
+                  <div class="notif-content"> <span class="block"> send messages to you </span> <span class="time">12 minutes ago</span> </div>
+                  </a> <a href="#">
+                  <div class="notif-icon notif-danger"> <i class="fa fa-heart"></i> </div>
+                  <div class="notif-content"> <span class="block"> liked Admin </span> <span class="time">17 minutes ago</span> </div>
+                  </a> </div>
+              </div>
+            </li>
+            <li> <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i> </a> </li>
+          </ul>
+        </li>
+        <li><span class="text-muted m-2"> Damodhar Reddy, Admin</span> </li>
+        <li class="nav-item dropdown hidden-caret"> <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+          <div class="avatar-sm"> <img src="{% static 'images/profile.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+          </a>
+          <ul class="dropdown-menu dropdown-user animated fadeIn">
+            <div class="dropdown-user-scroll scrollbar-outer">
+              <li>
+                <div class="user-box">
+                  <div class="avatar-lg"><img src="{% static 'images/profile.png' %}" alt="image profile" class="avatar-img rounded"></div>
+                  <div class="u-text">
+                    <h4>Damodhar</h4>
+                    <p class="text-muted">Damodhar@gmail.com</p>
+                    <a href="profile" class="btn btn-xs btn-warning btn-sm">View Profile</a> </div>
+                </div>
+              </li>
+              <li>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="fa fa-building"></i> Company Info</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#"><i class="fas fa-pencil-alt"></i> Edit Profile</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- End Header -->
+</div>
+<!-- Sidebar Menu -->
+<div class="sidebar sidebar-style-2">
+  <div class="sidebar-wrapper scrollbar scrollbar-inner">
+    <div class="sidebar-content">
+      <ul class="nav nav-primary">
+        <li class="nav-item active"><a href="{% static 'dashboard.html' %}"><i class="fas fa-chart-line"></i>
+          <p>Dashboard</p>
+          </a> </li>
+        <li class="nav-item"> <a data-toggle="collapse" href="#base"> <i class="fa fa-users"></i>
+          <p>Employees</p>
+          <span class="caret"></span> </a>
+          <div class="collapse" id="base">
+            <ul class="nav nav-collapse">
+            
+             
+              <li > <a href="emp_details"> <span class="sub-item">Employees Details </span> </a> </li>
+              <li > <a href="attendance"> <span class="sub-item">Attendence </span> </a> </li>
+              <li> <a href="loans"> <span class="sub-item">Loans</span> </a> </li>
+              <li> <a href="payslip"> <span class="sub-item">Payslip</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item"> <a data-toggle="collapse" href="#sidebarLayouts"> <i class="fa fa-user"></i>
+          <p>Clients</p>
+          <span class="caret"></span> </a>
+          <div class="collapse" id="sidebarLayouts">
+            <ul class="nav nav-collapse">
+              <li> <a href="#"> <span class="sub-item">Contracts</span> </a> </li>
+              <li> <a href="#"> <span class="sub-item">License</span> </a> </li>
+              <li> <a href="#"> <span class="sub-item">Attendance</span> </a> </li>
+              <li> <a href="#"> <span class="sub-item">Billing</span> </a> </li>
+              <li> <a href="#"> <span class="sub-item">Receipts</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#"><i class="fa fa-list-alt"></i>
+          <p>Inventroy</p>
+          </a> </li>
+        <li class="nav-item"> <a data-toggle="collapse" href="#tables"> <i class="fas fa-file-pdf"></i>
+          <p>Reports</p>
+          <span class="caret"></span> </a>
+          <div class="collapse" id="tables">
+            <ul class="nav nav-collapse">
+              <li> <a href="#"> <span class="sub-item">Employee</span> </a> </li>
+              <li> <a href="#"> <span class="sub-item">Clients</span> </a> </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- End Sidebar -->
+<div class="main-panel">
+<div class="content">
+<div class="page-inner mt--2">
+<div class="panel-header">
+        <div class="page-header">
+          <h4 class="page-title">Dashboard</h4>
+        </div>
+      </div>
+<div class="row"> 
+      <div class="col-md-6"> 
+          <div class="card full-height">
+            <div class="card-header">
+              <div class="card-head-row">
+                <div class="card-title">Generate Bills</div>
+                <div class="card-tools">
+                  <ul class="nav nav-pills nav-warning nav-pills-no-bd nav-sm" id="pills-tab" role="tablist">
+<li class="nav-item"> <a class="nav-link active" id="pills-today-tab" data-toggle="pill" href="#pills-today" role="tab" aria-controls="pills-home" aria-selected="true">Latest Bills </a> </li>
+ <li class="nav-item"> <a class="nav-link" id="pills-week-tab" data-toggle="pill" href="#pills-week" role="tab" aria-controls="pills-week" aria-selected="false">Latest Paysheets</a> </li>
+ <li class="nav-item"> <a class="nav-link" id="pills-month-tab" data-toggle="pill" href="#pills-month" role="tab" aria-controls="pills-month" aria-selected="false">Latest Receipts</a> </li>     </ul>
+                </div>
+              </div>
+            </div>
+            	<div class="tab-content mt-2 mb-3" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="pills-today" role="tabpanel" aria-labelledby="pills-today">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="avatar avatar-online"> <span class="avatar-title rounded-circle border border-white bg-info">J</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-warning pl-3">pending</span></h6>
+                  <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 07/02/2021   Grand Total Amount Rs.61,0005/-</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">2:13:00 PM </small> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-success pl-3">open</span></h6>
+                  <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 13/04s/2021</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">22:10:00 PM</small> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar avatar-away"> <span class="avatar-title rounded-circle border border-white bg-danger">L</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+                  <span class="text-muted">Is there any update plan for RTL version near future?</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">2 Days Ago</small> </div>
+              </div>   
+              <div class="m-5"></div>
+              <div class="separator-dashed"></div>
+              <div class="text-right "> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+          </div> 
+          <div class="tab-pane fade show " id="pills-week" role="tabpanel" aria-labelledby="pills-week">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="avatar avatar-online"> <span class="avatar-title rounded-circle border border-white bg-info">J</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">aaBill No: ESS/21-22/0298 <span class="text-warning pl-3">pending</span></h6>
+                  <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 07/02/2021   Grand Total Amount Rs.61,0005/-</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">2:13:00 PM </small> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-success pl-3">open</span></h6>
+                  <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 13/04s/2021</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">22:10:00 PM</small> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar avatar-away"> <span class="avatar-title rounded-circle border border-white bg-danger">L</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+                  <span class="text-muted">Is there any update plan for RTL version near future?</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">2 Days Ago</small> </div>
+              </div> 
+              <div class="m-5"></div>
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade show " id="pills-month" role="tabpanel" aria-labelledby="pills-month">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="avatar avatar-online"> <span class="avatar-title rounded-circle border border-white bg-info">J</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">ffffaaBill No: ESS/21-22/0298 <span class="text-warning pl-3">pending</span></h6>
+                  <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 07/02/2021   Grand Total Amount Rs.61,0005/-</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">2:13:00 PM </small> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-success pl-3">open</span></h6>
+                  <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 13/04s/2021</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">22:10:00 PM</small> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar avatar-away"> <span class="avatar-title rounded-circle border border-white bg-danger">L</span> </div>
+                <div class="flex-1 ml-3 pt-1">
+                  <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+                  <span class="text-muted">Is there any update plan for RTL version near future?</span> </div>
+                <div class="float-right pt-1"> <small class="text-muted">2 Days Ago</small> </div>
+              </div>
+                <div class="m-5"></div>
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+          </div>
+          
+          </div></div> 
+      </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"> <img src="{% static 'images/contract.png' %}" alt="..." class="rounded-circle">Contract Renewals </div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="avatar"> <img src="{% static 'images/license_icon.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+                <div class="flex-1 pt-1 ml-2">
+                  <h6 class="fw-bold mb-1">Martuti Courier Services Private Limited,</h6>
+                  <small class="text-muted"> ESS0026 ON 31/12/2020</small> </div>
+                <div class="d-flex ml-auto align-items-center"> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar"> <img src="{% static 'images/license_icon.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+                <div class="flex-1 pt-1 ml-2">
+                  <h6 class="fw-bold mb-1">Martuti Courier Services Private Limited,</h6>
+                  <small class="text-muted"> ESS0026 ON 31/12/2020</small> </div>
+                <div class="d-flex ml-auto align-items-center"> 
+                </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar"> <img src="{% static 'images/license_icon.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+                <div class="flex-1 pt-1 ml-2">
+                  <h6 class="fw-bold mb-1">Martuti Courier Services Private Limited,</h6>
+                  <small class="text-muted"> ESS0026 ON 31/12/2020</small> </div>
+                <div class="d-flex ml-auto align-items-center">
+                 </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header ">
+              <div class="card-title bg"> 
+                <img src="{% static 'images/license.png' %}" alt="..." class="rounded-circle"> License Renewals</div>
+            </div>
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="avatar"><img src="{% static 'images/pen_icon.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+                <div class="flex-1 pt-1 ml-2">
+                  <h6 class="fw-bold mb-1">Martuti Courier Services Private Limited,</h6>
+                  <small class="text-muted"> ESS0026 ON 31/12/2020</small> </div>
+                <div class="d-flex ml-auto align-items-center"> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar"> <img src="{% static 'images/pen_icon.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+                <div class="flex-1 pt-1 ml-2">
+                  <h6 class="fw-bold mb-1">Martuti Courier Services Private Limited,</h6>
+                  <small class="text-muted"> ESS0026 ON 31/12/2020</small> </div>
+                <div class="d-flex ml-auto align-items-center"> </div>
+              </div>
+              <div class="separator-dashed"></div>
+              <div class="d-flex">
+                <div class="avatar"> <img src="{% static 'images/pen_icon.png' %}" alt="..." class="avatar-img rounded-circle"> </div>
+                <div class="flex-1 pt-1 ml-2">
+                  <h6 class="fw-bold mb-1">Martuti Courier Services Private Limited,</h6>
+                  <small class="text-muted"> ESS0026 ON 31/12/2020</small> </div>
+                <div class="d-flex ml-auto align-items-center"> </div>
+              </div> 
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm ">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="card full-height">
+            <div class="card-header">
+              <div class="card-head-row">
+                <div class="card-title">Occations</div>
+                <div class="card-tools">
+                  <ul class="nav nav-pills nav-warning nav-pills-no-bd nav-sm" id="pills-tab" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" id="pills-bill-tab" data-toggle="pill" href="#pills-birth" role="tab" aria-controls="pills-birth" aria-selected="true">Birthdays</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-client-tab" data-toggle="pill" href="#pills-client" role="tab" aria-controls="pills-client" aria-selected="false"> Client Anniversary</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-emp-tab" data-toggle="pill" href="#pills-emp" role="tab" aria-controls="pills-emp" aria-selected="false"> Employee Anniversary</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-birth" role="tabpanel" aria-labelledby="pills-birth">
+                 <div class="card-body">
+              <ol class="activity-feed">
+                <li class="feed-item feed-item-secondary">
+                  <time class="date" datetime="9-25">Oct 25</time>
+                  <span class="text"><a href="#">"Diyos Technologies"</a> Wishes you a Very Happy Birthday</span> </li>
+                <li class="feed-item feed-item-success">
+                  <time class="date" datetime="9-24">Sep 24</time>
+                  <span class="text">Added an interest <a href="#">"Volunteer Activities"</a></span> </li>
+                <li class="feed-item feed-item-info">
+                  <time class="date" datetime="9-23">Sep 23</time>
+                  <span class="text">Joined the group <a href="single-group.php' %}">"Boardsmanship Forum"</a></span> </li>
+                <li class="feed-item feed-item-warning">
+                  <time class="date" datetime="9-21">Sep 21</time>
+                  <span class="text">Responded to need <a href="#">"In-Kind Opportunity"</a></span> </li>
+                <li class="feed-item feed-item-danger">
+                  <time class="date" datetime="9-18">Sep 18</time>
+                  <span class="text">Created need <a href="#">"Volunteer Opportunity"</a></span> </li>
+              </ol>
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+              </div>
+              <div class="tab-pane fade show " id="pills-client" role="tabpanel" aria-labelledby="pills-client">
+                 <div class="card-body">
+              <ol class="activity-feed">
+                <li class="feed-item feed-item-secondary">
+                  <time class="date" datetime="9-25">Sep 25</time>
+                  <span class="text"><a href="#">"Diyos Technologies"</a> Wishes you a Very Happy Birthday</span> </li>
+                <li class="feed-item feed-item-success">
+                  <time class="date" datetime="9-24">Sep 24</time>
+                  <span class="text">Added an interest <a href="#">"Volunteer Activities"</a></span> </li>
+                <li class="feed-item feed-item-info">
+                  <time class="date" datetime="9-23">Sep 23</time>
+                  <span class="text">Joined the group <a href="single-group.php' %}">"Boardsmanship Forum"</a></span> </li>
+                <li class="feed-item feed-item-warning">
+                  <time class="date" datetime="9-21">Sep 21</time>
+                  <span class="text">Responded to need <a href="#">"In-Kind Opportunity"</a></span> </li>
+                <li class="feed-item feed-item-danger">
+                  <time class="date" datetime="9-18">Sep 18</time>
+                  <span class="text">Created need <a href="#">"Volunteer Opportunity"</a></span> </li>
+              </ol>
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+              </div>
+              <div class="tab-pane fade show " id="pills-emp" role="tabpanel" aria-labelledby="pills-emp">
+                 <div class="card-body">
+              <ol class="activity-feed">
+                <li class="feed-item feed-item-secondary">
+                  <time class="date" datetime="9-25">Dec 12</time>
+                  <span class="text"><a href="#">"Diyos Technologies"</a> Wishes you a Very Happy Birthday</span> </li>
+                <li class="feed-item feed-item-success">
+                  <time class="date" datetime="9-24">Sep 24</time>
+                  <span class="text">Added an interest <a href="#">"Volunteer Activities"</a></span> </li>
+                <li class="feed-item feed-item-info">
+                  <time class="date" datetime="9-23">Sep 23</time>
+                  <span class="text">Joined the group <a href="single-group.php">"Boardsmanship Forum"</a></span> </li>
+                <li class="feed-item feed-item-warning">
+                  <time class="date" datetime="9-21">Sep 21</time>
+                  <span class="text">Responded to need <a href="#">"In-Kind Opportunity"</a></span> </li>
+                <li class="feed-item feed-item-danger">
+                  <time class="date" datetime="9-18">Sep 18</time>
+                  <span class="text">Created need <a href="#">"Volunteer Opportunity"</a></span> </li>
+              </ol>
+              <div class="separator-dashed"></div>
+              <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="card full-height">
+            <div class="card-header">
+              <div class="card-head-row">
+                <div class="card-title">Previous Bills</div>
+                <div class="card-tools">
+                  <ul class="nav nav-pills nav-info nav-pills-no-bd nav-sm" id="pills-tab" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" id="pills-bill-tab" data-toggle="pill" href="#pills-bill" role="tab" aria-controls="pills-home" aria-selected="true">Billing</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-pay-tab" data-toggle="pill" href="#pills-pay" role="tab" aria-controls="pills-week" aria-selected="false"> Paysheets</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="pills-rec-tab" data-toggle="pill" href="#pills-rec" role="tab" aria-controls="pills-month" aria-selected="false"> Receipts</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content mt-2 mb-3" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-bill" role="tabpanel" aria-labelledby="pills-bill">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <div class="avatar avatar-online"> <span class="avatar-title rounded-circle border border-white bg-info">J</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Bill No: ggESS/21-22/0298 <span class="text-warning pl-3">pending</span></h6>
+                      <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 07/02/2021   Grand Total Amount Rs.61,0005/-</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2:13:00 PM </small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-success pl-3">open</span></h6>
+                      <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 13/04s/2021</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">22:10:00 PM</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-away"> <span class="avatar-title rounded-circle border border-white bg-danger">L</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+                      <span class="text-muted">Is there any update plan for RTL version near future?</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2 Days Ago</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Peter Parker <span class="text-success pl-3">open</span></h6>
+                      <span class="text-muted">I have some query regarding the license issue.</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2 Day Ago</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+                </div>
+              </div>
+              <div class="tab-pane fade show " id="pills-pay" role="tabpanel" aria-labelledby="pills-pay">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <div class="avatar avatar-online"> <span class="avatar-title rounded-circle border border-white bg-info">J</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">ddBill No: ESS/21-22/0298 <span class="text-warning pl-3">pending</span></h6>
+                      <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 07/02/2021   Grand Total Amount Rs.61,0005/-</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2:13:00 PM </small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-success pl-3">open</span></h6>
+                      <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 13/04s/2021</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">22:10:00 PM</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-away"> <span class="avatar-title rounded-circle border border-white bg-danger">L</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+                      <span class="text-muted">Is there any update plan for RTL version near future?</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2 Days Ago</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Peter Parker <span class="text-success pl-3">open</span></h6>
+                      <span class="text-muted">I have some query regarding the license issue.</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2 Day Ago</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+                </div>
+              </div>
+              <div class="tab-pane fade show " id="pills-rec" role="tabpanel" aria-labelledby="pills-rec">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <div class="avatar avatar-online"> <span class="avatar-title rounded-circle border border-white bg-info">J</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">33ffffaaBill No: ESS/21-22/0298 <span class="text-warning pl-3">pending</span></h6>
+                      <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 07/02/2021   Grand Total Amount Rs.61,0005/-</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2:13:00 PM </small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Bill No: ESS/21-22/0298 <span class="text-success pl-3">open</span></h6>
+                      <span class="text-muted">Generated to Spansules - Annaraam ESS0029 on 13/04s/2021</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">22:10:00 PM</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-away"> <span class="avatar-title rounded-circle border border-white bg-danger">L</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
+                      <span class="text-muted">Is there any update plan for RTL version near future?</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2 Days Ago</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="d-flex">
+                    <div class="avatar avatar-offline"> <span class="avatar-title rounded-circle border border-white bg-secondary">P</span> </div>
+                    <div class="flex-1 ml-3 pt-1">
+                      <h6 class="text-uppercase fw-bold mb-1">Peter Parker <span class="text-success pl-3">open</span></h6>
+                      <span class="text-muted">I have some query regarding the license issue.</span> </div>
+                    <div class="float-right pt-1"> <small class="text-muted">2 Day Ago</small> </div>
+                  </div>
+                  <div class="separator-dashed"></div>
+                  <div class="text-right"> <a href="#" class="btn btn-outline-warning rounded-pill waves-effect waves-light btn-round btn-sm">More Tasks <i class="fa fa-arrow-right"></i></a> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div></div>
+<footer class="footer">
+    <div class="container-fluid">
+      <nav class="pull-left">
+        <ul class="nav">
+         <li class="nav-item"> <a class="nav-link" href="terms"> Terms & Conditions </a> </li>
+          <li class="nav-item"> <a class="nav-link" href="privacy">  Privacy Policy  </a> </li>
+        </ul>
+      </nav>
+      <div class="copyright ml-auto"> &copy; 2021 <a href="#">Nkaizen Consulting Services</a></div>
+    </div>
+  </footer>
+</div></div>
+<script src="{% static 'js/jquery.3.2.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/jquery.scrollbar.min.js' %}"></script>
+<script src="{% static 'js/layout.min.js' %}"></script>
+</body>
+</html>
